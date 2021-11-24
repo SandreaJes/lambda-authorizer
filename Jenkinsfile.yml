@@ -1,0 +1,39 @@
+version: '1'
+
+apiGW:
+  stage: 'securityManagement'
+
+lambdas:
+
+  - name: 'authorizer'
+    subPackage: 'authorizer'
+    handler: 'src/index.handler'
+    memory: 512
+    timeout: 60
+    runtime: 'nodejs10.x'
+    environment:
+      - PORT: '8080'
+      - ACCES_TOKEN_TIME_OUT: '3000'
+      - SSM_SECRET_KEY_NAME: 'bpop.auth.jwt.secret'
+      - SSM_APPLICATION: 'bpop-digital-salary-loans'
+
+    stacks:
+      - stack: 'dev'
+        environment:
+          - PROFILE_ACTIVE: 'dev'
+          - ENVNAME: 'gb-dev'
+
+      - stack: 'stg'
+        memory: 768
+        timeout: 90
+        environment:
+          - PROFILE_ACTIVE: 'stg'
+          - ENVNAME: 'gb-stg'
+
+      - stack: 'pro'
+        memory: 1024
+        timeout: 120
+        runtime: 'nodejs8.10'
+        environment:
+          - PROFILE_ACTIVE: 'prod'
+          - ENVNAME: 'gb-prod'

@@ -1,0 +1,27 @@
+{
+  "name": "bpop-salaryloans-backend-authorize-lambda",
+  "version": "1.1.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avaldigitallabs/devops-pipeline-node-lambdas-example.git"
+  },
+  "scripts": {
+    "postinstall": "subpkg install",
+    "test": "subpkg test",
+    "audit": "subpkg run audit",
+    "build": "subpkg run build",
+    "sonar": "subpkg run sonar",
+    "lint": "subpkg run lint",
+    "lint:fix": "subpkg run lint:fix",
+    "prettier:list": "subpkg run prettier:list",
+    "prettier:write": "subpkg run prettier:write",
+    "prettier": "subpkg run prettier"
+  },
+  "subPackages": [
+    "authorizer"
+  ],
+  "devDependencies": {
+    "subpackage": "^1.1.0"
+  }
+}

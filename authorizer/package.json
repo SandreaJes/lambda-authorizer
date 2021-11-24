@@ -1,0 +1,44 @@
+{
+  "name": "authorizer",
+  "version": "1.1.1",
+  "main": "src/index.js",
+  "files": [
+    "/src"
+  ],
+  "scripts": {
+    "test": "nyc --reporter=lcov mocha test",
+    "prebuild": "rm -rf dist",
+    "audit": "npm audit",
+    "sonar": "sonar-scanner -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_TOKEN",
+    "build": "repack-zip",
+    "lint:fix": "eslint --fix .",
+    "lint": "eslint .",
+    "prettier:list": "prettier --list-different \"./{test,src}/**/*.js\" || ECHO .",
+    "prettier:write": "prettier --write  \"./{test,src}/**/*.js\"",
+    "prettier": "prettier --check  \"./{test,src}/**/*.js\"",
+    "postbuild": "mkdir dist; mv authorizer.zip dist/"
+  },
+  "devDependencies": {
+    "aws-sdk-mock": "^5.0.0",
+    "chai": "^4.2.0",
+    "chai-string": "^1.5.0",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jshint": "^2.10.2",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
+    "prettier-eslint": "^9.0.0",
+    "repack-zip": "^0.2.5",
+    "sonar-scanner": "^3.1.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.596.0",
+    "crypto-js": "3.1.9-1",
+    "jsonwebtoken": "8.1.0",
+    "moment": "^2.24.0"
+  }
+}
