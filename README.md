@@ -1,11 +1,11 @@
-# devops-pipeline-node-lambdas-example
+# devops-pipeline-node-lambdas-authorizer
 
 [![node](https://img.shields.io/badge/node-v11.3.X-yellow.svg)](https://nodejs.org)
 [![npm](https://img.shields.io/badge/npm-v6.6.X-red.svg)](https://www.npmjs.com/)
 
->A simple NodeJs project to test ADL DevOps Node Lambda Pipelines. `:wq`
+>A simple NodeJs project to  control access our API Lambda Pipelines. `:wq`
 >
->Developed with all :heart: in the world by ADL DevOps team
+>Developed with all :heart:  team
 
 ## Prerequisites
 
@@ -17,8 +17,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone git@github.com:avaldigitallabs/devops-pipeline-node-lambdas-example.git` this repository
-* change into the new directory `cd devops-pipeline-node-lambdas-example`
+* `git clone git@github.com:SandreaJes/lambda-authorizer.git.git` this repository
+* change into the new directory `cd lambda-authorizer`
 
 ## Dependencies
 
