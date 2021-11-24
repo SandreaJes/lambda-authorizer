@@ -3,7 +3,7 @@
 [![node](https://img.shields.io/badge/node-v11.3.X-yellow.svg)](https://nodejs.org)
 [![npm](https://img.shields.io/badge/npm-v6.6.X-red.svg)](https://www.npmjs.com/)
 
->A simple NodeJs project to  control access our API Lambda Pipelines. `:wq`
+>it is a custom authorization schema that uses a bearer token authentication strategy when a client makes a request to one of your api method , the service API gateway calls this lambda authorizer , which takes the caller identity as input and return an IAM policy as output. Lambda authorizer can be reused for many different apis to control acces to our API
 >
 >Developed with all :heart:  team
 
